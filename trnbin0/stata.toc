@@ -2,4 +2,4 @@
 1
 2
 3
-p suradf Series-specific SUR-ADF panel unit root test (Breuer, McNown and Wallace 2002) Use suradf With STATA 19
+p trnbin0 0-Truncated Negative Binomial Estimates Regression Use trnbin0 With STATA 19
