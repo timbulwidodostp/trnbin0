@@ -1,0 +1,72 @@
+.-
+help for ^trnbin0^                                          (STB-47: sg102)
+.-
+
+0-Truncated Negative Binomial Regression
+----------------------------------------
+
+  ^trnbin0^ depvar [varlist] [weight] [^if^ exp] [^in^ range]  
+           [, ^l^evel ^lt^erate^(^#^) ir^r ^off^set^(^var^)^]
+
+^aweights^ and ^fweights^ are allowed; see help @weights@.
+Results may be redisplayed by issuing the command with no 
+arguments or options. 
+
+  
+Options
+-------
+
+^level(^#^)^ specifies the confidence level, in percent, for confidence 
+intervals. The default is ^level(95)^ or as set by ^set level^.
+
+^iterate(^#^)^ specifies the maximum  number of iterations that are allowed 
+before results are presentedas if convergence had been achieved.
+
+^irr^ reports estimated coefficients transformed to incidence ratios, i.e., 
+e to the power of b rather than b. Standard errors and confidence intervals 
+are similarly transformed. This option affects how results are displayed, 
+not how they are estimated. ^irr^ may be specified at estimation or when 
+replaying previously estimated results.
+
+^offset(^varname^)^ specifies a variable that is to be entered
+directly into the log-link function with coefficient constrained to be 1.
+
+^ltolerance(^#^)^ specifies the maximum change in the log-likelihood 
+function that can occur between iterations before convergence can be 
+declared and defaults to 10 to the power of -7.
+
+Results may be redisplayed by entering the command. Exponential form and 
+C.I. level are allowed as options without reestimation.
+
+Use: A 0-truncated negative binomial model is appropriate when modeling count 
+     data which have no possibility of having 0 values. This is to be 
+     distinguished from datasets without 0 values, but which may have 0's. 
+     For example, length of hospital stay data (LOS) begins with patients 
+     having a LOS of 1. 0 values are not allowed. This is a situation 
+     where a truncated model may be appropriate.
+
+     
+Examples
+--------
+
+ . ^trnbin0 studytim died drug2 drug3, irr nolog^
+ 
+ . ^trnbin0 infected cases cd4 cd8, nolog irr off(cases) cluster(prov)^
+
+ . ^trnbin0, level(90)^    [redisplay]
+
+
+Author
+------
+
+       Joseph Hilbe
+       Arizona State University
+       hilbe@@asu.edu
+
+
+Also see
+--------
+
+    STB:  STB-47 sg102
+ Manual:  [R] poisson, glm, cnreg
+On-line:  help for @poisson@, @glm@, @cnreg@, @trpois0@
