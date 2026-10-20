@@ -1,6 +1,8 @@
 # trnbin0
 0-Truncated Negative Binomial Estimates Regression Use trnbin0 With STATA 19
 
+https://www.youtube.com/watch?v=RbYrEXYqav0
+
 Olah Data Semarang
 
 WA: +6285227746673 (085227746673)
